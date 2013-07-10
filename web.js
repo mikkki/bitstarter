@@ -3,6 +3,7 @@ var express = require('express');
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
+  var fs = require('fs');
   var txt = JSON.parse(fs.readFileSync('index.html'));
   buf = new Buffer(256);
   len = buf.write(txt, 0);
